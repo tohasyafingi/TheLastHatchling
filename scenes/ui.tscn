@@ -1,0 +1,144 @@
+[gd_scene load_steps=6 format=4 uid="uid://bw8xnj0yqw7vr"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_ui"]
+
+[sub_resource type="StyleBoxFlat" id="SBHealthBG"]
+bg_color = Color(0.0901961, 0.105882, 0.141176, 0.85)
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="SBHealthFG"]
+bg_color = Color(0.235294, 0.709804, 0.470588, 1)
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="SBPanelDanger"]
+bg_color = Color(0.25098, 0.0313726, 0.0313726, 0.92)
+corner_radius_bottom_left = 12
+corner_radius_bottom_right = 12
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+border_width_all = 2
+border_color = Color(1, 0.223529, 0.223529, 1)
+
+[sub_resource type="StyleBoxFlat" id="SBPanelSuccess"]
+bg_color = Color(0.0352941, 0.2, 0.0823529, 0.92)
+corner_radius_bottom_left = 12
+corner_radius_bottom_right = 12
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+border_width_all = 2
+border_color = Color(0.341176, 0.862745, 0.486275, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ui")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 30)
+max_value = 100.0
+value = 100.0
+theme_override_styles/background = SubResource("SBHealthBG")
+theme_override_styles/fill = SubResource("SBHealthFG")
+show_percentage = false
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SBPanelDanger")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="VictoryPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -120.0
+offset_right = 200.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SBPanelSuccess")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="VictoryPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "VICTORY!"
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="VictoryPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Final Score: 0"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VictoryPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Play Again"

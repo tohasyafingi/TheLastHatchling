@@ -1,0 +1,84 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/ios/
+/linux/
+/macos/
+/windows/
+/web/
+export/
+*.translation
+*.pot
+
+# Imported assets
+*.import
+
+# Compiled/packaged files
+*.pck
+*.zip
+*.exe
+*.dll
+*.dylib
+*.so
+
+# Python cache
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# OS-specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# IDE and Editor
+.vscode/
+.vscode_extensions/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+.project
+.cproject
+.c9/
+*.launch
+.settings/
+.classpath
+*.iml
+.gradle/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Godot user settings
+user_settings/
+
+# Godot mono builds
+.mono/
+mono_crash.*.json
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+*.bak
+*~
+
+# OS
+Thumbs.db
+Desktop.ini

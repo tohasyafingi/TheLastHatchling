@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=4]
+
+[ext_resource type="Script" path="res://scripts/home.gd" id="1_home"]
+
+[sub_resource type="StyleBoxFlat" id="SBPanel"]
+bg_color = Color(0.12, 0.14, 0.22, 0.95)
+corner_radius_bottom_left = 18
+corner_radius_bottom_right = 18
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+border_width_all = 2
+border_color = Color(0.45, 0.82, 0.76, 0.7)
+
+[sub_resource type="StyleBoxFlat" id="SBButtonPrimary"]
+bg_color = Color(0.45, 0.82, 0.76, 1)
+corner_radius_bottom_left = 10
+corner_radius_bottom_right = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+border_width_all = 2
+border_color = Color(0.25, 0.60, 0.55, 1)
+
+[sub_resource type="StyleBoxFlat" id="SBButtonSecondary"]
+bg_color = Color(0.20, 0.25, 0.35, 1)
+corner_radius_bottom_left = 10
+corner_radius_bottom_right = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+border_width_all = 2
+border_color = Color(0.45, 0.82, 0.76, 0.6)
+
+[node name="Home" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_home")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.15, 0.2, 0.35, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CardPanel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(480, 340)
+theme_override_styles/panel = SubResource("SBPanel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/CardPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -32.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="CenterContainer/CardPanel/VBoxContainer"]
+layout_mode = 2
+text = "THE LAST HATCHLING"
+theme_override_colors/font_color = Color(0.88, 0.96, 1.0, 1)
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+custom_minimum_size = Vector2(0, 50)
+
+[node name="Desc" type="Label" parent="CenterContainer/CardPanel/VBoxContainer"]
+layout_mode = 2
+text = "Collect crystals, avoid enemies, and save the last hatchling"
+theme_override_colors/font_color = Color(0.65, 0.72, 0.80, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+custom_minimum_size = Vector2(0, 50)
+
+[node name="ButtonContainer" type="HBoxContainer" parent="CenterContainer/CardPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="CenterContainer/CardPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(160, 48)
+text = "START"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.12, 0.14, 0.22, 1)
+theme_override_styles/normal = SubResource("SBButtonPrimary")
+theme_override_styles/hover = SubResource("SBButtonPrimary")
+theme_override_styles/pressed = SubResource("SBButtonPrimary")
+
+[node name="QuitButton" type="Button" parent="CenterContainer/CardPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+custom_minimum_size = Vector2(160, 48)
+text = "QUIT"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.45, 0.82, 0.76, 1)
+theme_override_styles/normal = SubResource("SBButtonSecondary")
+theme_override_styles/hover = SubResource("SBButtonSecondary")
+theme_override_styles/pressed = SubResource("SBButtonSecondary")
