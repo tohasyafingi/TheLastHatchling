@@ -6,6 +6,7 @@
 /macos/
 /windows/
 /web/
+/builds/
 export/
 *.translation
 *.pot
