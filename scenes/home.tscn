@@ -501,8 +501,9 @@ texture_pressed = ExtResource("9_start_btn")
 texture_hover = ExtResource("9_start_btn")
 
 [node name="Control" type="Sprite2D" parent="."]
-position = Vector2(1148, 133.00002)
-scale = Vector2(0.23714806, 0.2371481)
+texture_filter = 1
+position = Vector2(1138.2609, 142.06252)
+scale = Vector2(0.25933287, 0.25933293)
 texture = ExtResource("14_gi00y")
 
 [node name="AnimationTimer" type="Timer" parent="."]

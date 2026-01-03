@@ -23,7 +23,7 @@ A 2D platformer adventure game built with Godot 4, where you must collect crysta
 ## Project Structure
 
 ```
-dragon/
+TheLastHatchling/
 ├── scenes/                    # All game scenes
 │   ├── splash.tscn            # Splash/intro screen
 │   ├── home.tscn              # Main menu screen
@@ -208,7 +208,7 @@ Contributions are welcome! Please feel free to:
 
 For questions, bug reports, or suggestions:
 - Open an [Issue](https://github.com/tohasyafingi/TheLastHatchling/issues) on GitHub
-- Email: [Your email here]
+- Email: tohasyafingi12@gmail.com
 
 ---
 

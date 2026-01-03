@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dy4jbp3r5xuva" path="res://scenes/collectible.tscn" id="9_conm7"]
 [ext_resource type="PackedScene" uid="uid://csccl1g4n30op" path="res://scenes/check_point.tscn" id="11_u3awl"]
 [ext_resource type="AudioStream" uid="uid://cvwxybwdd74gs" path="res://assets/music/level1.ogg" id="12_lvkbr"]
-[ext_resource type="Script" uid="uid://d2mh8wdk4j3n9" path="res://scripts/level1_animator.gd" id="13_level1_animator"]
+[ext_resource type="Script" uid="uid://bqo7xp5wbfjxi" path="res://scripts/level1_animator.gd" id="13_level1_animator"]
 [ext_resource type="PackedScene" uid="uid://cg5k6o5m04t6" path="res://scenes/touch_controls.tscn" id="14_touch_controls"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_conm7"]
@@ -395,6 +395,10 @@ sources/1 = SubResource("TileSetAtlasSource_d3jkd")
 scale = Vector2(1.8, 1.8)
 script = ExtResource("4_game_manager")
 
+[node name="UI" parent="." instance=ExtResource("1_ru4tf")]
+
+[node name="TouchControls" parent="." instance=ExtResource("14_touch_controls")]
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_lvkbr")
 volume_db = -5.0
@@ -403,10 +407,6 @@ autoplay = true
 [node name="BackgroundAnimator" type="Node2D" parent="."]
 script = ExtResource("13_level1_animator")
 
-[node name="UI" parent="." instance=ExtResource("1_ru4tf")]
-
-[node name="TouchControls" parent="." instance=ExtResource("14_touch_controls")]
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -414,8 +414,8 @@ texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(679, 402)
-scale = Vector2(4, 4)
+position = Vector2(656.00006, 431.00003)
+scale = Vector2(4.3203125, 4.5208335)
 texture = ExtResource("2_bbk5w")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]

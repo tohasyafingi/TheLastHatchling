@@ -17,6 +17,7 @@ extends CanvasLayer
 var pending_next_level_path := ""
 
 var score := 0
+var touch_controls: CanvasLayer = null
 
 func _ready():
 	game_over_panel.hide()
@@ -31,6 +32,9 @@ func _ready():
 	checkpoint_restart_button.pressed.connect(_on_restart_pressed)
 	checkpoint_home_button.pressed.connect(_on_home_pressed)
 	update_score(0)
+	# Find touch controls
+	await get_tree().process_frame
+	touch_controls = get_tree().root.find_child("TouchControls", true, false)
 
 func update_health(current_hp: int, max_hp: int):
 	health_bar.max_value = max_hp
@@ -45,20 +49,28 @@ func add_score(amount: int):
 
 func show_game_over():
 	get_tree().paused = true
+	if touch_controls:
+		touch_controls.hide()
 	game_over_panel.show()
 
 func show_victory():
 	get_tree().paused = true
+	if touch_controls:
+		touch_controls.hide()
 	victory_panel.show()
 
 func show_checkpoint_modal(next_level_path: String):
 	get_tree().paused = true
+	if touch_controls:
+		touch_controls.hide()
 	checkpoint_panel.show()
 	pending_next_level_path = next_level_path
 
 func _on_restart_pressed():
 	var tree := get_tree()
 	tree.paused = false
+	if touch_controls:
+		touch_controls.show()
 	var level_path := ""
 	if tree.has_meta("current_level_path"):
 		level_path = str(tree.get_meta("current_level_path"))
@@ -69,12 +81,16 @@ func _on_restart_pressed():
 
 func _on_home_pressed():
 	get_tree().paused = false
+	if touch_controls:
+		touch_controls.show()
 	if home_scene_path != "":
 		get_tree().change_scene_to_file(home_scene_path)
 
 func _on_checkpoint_next_pressed():
 	var tree := get_tree()
 	tree.paused = false
+	if touch_controls:
+		touch_controls.show()
 	if pending_next_level_path != "":
 		tree.change_scene_to_file(pending_next_level_path)
 	else:
