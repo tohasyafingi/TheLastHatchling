@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7tfraxlxr7up"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://bf3uadxg3tpte" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/splash.tscn" id="2_splash"]
 [ext_resource type="PackedScene" path="res://scenes/home.tscn" id="3_home"]
-[ext_resource type="PackedScene" uid="uid://dpb5ywxh8t8rq" path="res://scenes/level_complete.tscn" id="4_level"]
+[ext_resource type="PackedScene" uid="uid://n3652t6tber0" path="res://scenes/level1.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
 splash_scene = ExtResource("2_splash")
 home_scene = ExtResource("3_home")
-level_scene = ExtResource("4_level")
+level_scene = ExtResource("4_jyhfs")

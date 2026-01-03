@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg5k6o5m04t6"]
+
+[ext_resource type="Script" uid="uid://knlorjadikyg" path="res://scripts/touch_controls.gd" id="1_touch_controls"]
+[ext_resource type="Texture2D" uid="uid://dyyvs8des4bxg" path="res://assets/control/left.png" id="2_left"]
+[ext_resource type="Texture2D" uid="uid://ckaxvkpiodwrf" path="res://assets/control/right.png" id="3_right"]
+[ext_resource type="Texture2D" uid="uid://bqlsa76pukult" path="res://assets/control/attack.png" id="4_attack"]
+[ext_resource type="Texture2D" uid="uid://cjfn7tjpr1xnf" path="res://assets/control/jump.png" id="5_jump"]
+
+[node name="TouchControls" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_touch_controls")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 20.0
+offset_right = -80.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="LeftButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("2_left")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RightButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("3_right")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ControlSpacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightControls" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="AttackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/RightControls"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("4_attack")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="JumpButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/RightControls"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_jump")
+ignore_texture_size = true
+stretch_mode = 5

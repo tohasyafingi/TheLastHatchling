@@ -1,39 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://dy4jbp3r5xuva"]
+[gd_scene load_steps=11 format=3 uid="uid://dy4jbp3r5xuva"]
 
 [ext_resource type="Script" uid="uid://dr8h4yxnp2ysb" path="res://scripts/collectible.gd" id="1_collectible"]
-[ext_resource type="Texture2D" uid="uid://16w07c1aqevq" path="res://assets/images/tilemap/Flying_stone.png" id="2_1pg6c"]
-[ext_resource type="AudioStream" path="res://assets/sfx/Collect.wav" id="3_collect"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_61c27"]
-atlas = ExtResource("2_1pg6c")
-region = Rect2(0, 0, 160, 128)
+[ext_resource type="AudioStream" uid="uid://cy447somrkgnk" path="res://assets/music/sfx/Collect.wav" id="2_1pg6c"]
+[ext_resource type="Texture2D" uid="uid://cxe4c6h2boeqq" path="res://assets/gem.png" id="2_61c27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ga2k0"]
-atlas = ExtResource("2_1pg6c")
-region = Rect2(160, 0, 160, 128)
+atlas = ExtResource("2_61c27")
+region = Rect2(0, 0, 15, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gns2"]
-atlas = ExtResource("2_1pg6c")
-region = Rect2(320, 0, 160, 128)
+atlas = ExtResource("2_61c27")
+region = Rect2(15, 0, 15, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rapul"]
-atlas = ExtResource("2_1pg6c")
-region = Rect2(480, 0, 160, 128)
+atlas = ExtResource("2_61c27")
+region = Rect2(30, 0, 15, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh687"]
-atlas = ExtResource("2_1pg6c")
-region = Rect2(640, 0, 160, 128)
+atlas = ExtResource("2_61c27")
+region = Rect2(45, 0, 15, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma10x"]
-atlas = ExtResource("2_1pg6c")
-region = Rect2(800, 0, 160, 128)
+atlas = ExtResource("2_61c27")
+region = Rect2(60, 0, 15, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwfng"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_61c27")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ga2k0")
 }, {
@@ -55,21 +48,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_collect"]
-radius = 16.0
+radius = 7.071068
 
 [node name="Collectible" type="Area2D" groups=["collectibles"]]
 collision_layer = 0
 script = ExtResource("1_collectible")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lwfng")
-frame_progress = 0.68089277
+frame_progress = 0.13657129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_collect")
 
 [node name="CollectSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_collect")
-bus = &"Master"
+stream = ExtResource("2_1pg6c")
 volume_db = 2.0

@@ -11,6 +11,9 @@ var death_zone_y := 1000
 
 func _ready():
 	add_to_group("game_manager")
+	# Track the current level path so UI can restart the active level even when wrapped by a main scene
+	if scene_file_path != "":
+		get_tree().set_meta("current_level_path", scene_file_path)
 	
 	# Putar sound open saat game dimulai
 	if open_sound:
@@ -37,10 +40,19 @@ func add_score(amount: int):
 	if ui:
 		ui.add_score(amount)
 	collected += 1
-	
-	# Victory condition: semua botol energi terkumpul
-	if collected >= total_collectibles:
-		check_victory()
+	# Don't auto-trigger victory; checkpoint will handle level progression
+
+func get_collected_count() -> int:
+	return collected
+
+func load_scene(path: String):
+	# Deferred load to avoid conflicts when called during body_entered
+	await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_file(path)
+
+func on_checkpoint_reached(next_scene_path: String):
+	if ui and ui.has_method("show_checkpoint_modal"):
+		ui.show_checkpoint_modal(next_scene_path)
 
 func check_victory():
 	await get_tree().create_timer(0.5).timeout

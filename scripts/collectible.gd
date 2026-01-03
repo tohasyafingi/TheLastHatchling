@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var score_value := 10
+@export var score_value := 1
 @export var heal_amount := 20
 
 @onready var sprite: AnimatedSprite2D = get_node_or_null("AnimatedSprite2D")

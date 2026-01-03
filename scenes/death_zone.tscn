@@ -10,4 +10,5 @@ collision_layer = 0
 script = ExtResource("1_death")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(749, 733)
 shape = SubResource("RectangleShape2D_death")

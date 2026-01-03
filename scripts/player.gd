@@ -13,6 +13,10 @@ var last_safe_y := 0.0
 var fall_start_y := 0.0
 var is_falling := false
 
+# Touch control variables
+var touch_move_direction := 0
+var touch_jump_requested := false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea
 @onready var jump_sound: AudioStreamPlayer = $JumpSound
@@ -60,6 +64,11 @@ func handle_movement():
 		return
 
 	var dir := Input.get_axis("ui_left", "ui_right")
+	
+	# Prioritize touch input if active
+	if touch_move_direction != 0:
+		dir = touch_move_direction
+	
 	velocity.x = dir * speed
 
 	if dir != 0:
@@ -73,8 +82,9 @@ func handle_movement():
 				step_timer = 0.25  # Interval antar langkah (40px spacing @ 160px/s)
 
 func handle_jump():
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if (Input.is_action_just_pressed("ui_accept") or touch_jump_requested) and is_on_floor():
 		velocity.y = jump_force
+		touch_jump_requested = false
 		if jump_sound:
 			jump_sound.play()
 
@@ -148,3 +158,15 @@ func _on_AnimatedSprite2D_animation_finished():
 		if after_die_sound:
 			after_die_sound.play()
 		await get_tree().create_timer(1.0).timeout
+
+# Touch control methods
+func set_move_direction(direction: int) -> void:
+	touch_move_direction = clamp(direction, -1, 1)
+
+func jump() -> void:
+	if is_on_floor() and not is_dead:
+		touch_jump_requested = true
+
+func request_attack() -> void:
+	if can_attack and not is_attacking and not is_dead:
+		attack()

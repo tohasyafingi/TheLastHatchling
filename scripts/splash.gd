@@ -7,6 +7,7 @@ signal finished
 
 func _ready():
 	timer.wait_time = auto_time
+	timer.timeout.connect(_on_Timer_timeout)
 	timer.start()
 
 func _on_Timer_timeout():
