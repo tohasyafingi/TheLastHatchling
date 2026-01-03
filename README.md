@@ -2,6 +2,8 @@
 
 A 2D platformer adventure game built with Godot 4, where you must collect crystals, avoid enemies, and save the last hatchling from extinction.
 
+**▶️ [Play now on itch.io](https://toha-syafingi.itch.io/the-last-hatchling)**
+
 ## Features
 
 - **Exploration & Platforming**: Navigate through cave environments with smooth physics-based movement
