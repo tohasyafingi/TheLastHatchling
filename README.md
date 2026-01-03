@@ -13,68 +13,112 @@ A 2D platformer adventure game built with Godot 4, where you must collect crysta
 
 ## Gameplay Mechanics
 
-- **Movement**: WASD or Arrow keys to move left/right and jump
-- **Attack**: Press Space to attack enemies
+- **Movement**: A/D or Arrow keys to move left/right
+- **Jump**: Space bar to jump
+- **Attack**: Enter key to attack enemies
 - **Collection**: Automatically collect crystals when you touch them
 - **Health System**: Avoid enemies and hazards to survive
-- **Energy Bottles**: Pickup bottles to restore health
+- **Touch Controls**: Available on mobile platforms (directional buttons + action buttons)
 
 ## Project Structure
 
 ```
 dragon/
-├── scenes/              # All game scenes
-│   ├── splash.tscn      # Splash/intro screen
-│   ├── home.tscn        # Main menu screen
-│   ├── level1.tscn      # Level 1 (Grasslands)
-│   ├── player.tscn      # Player character
-│   ├── enemy.tscn       # Enemy entities
-│   ├── collectible.tscn # Crystal items
-│   └── ui.tscn          # UI elements
-├── scripts/             # All GDScript files
-│   ├── main.gd          # Main scene manager
-│   ├── splash.gd        # Splash screen logic
-│   ├── home.gd          # Home menu logic
-│   ├── player.gd        # Player movement & combat
-│   ├── game_manager.gd  # Game state management
+├── scenes/                    # All game scenes
+│   ├── splash.tscn            # Splash/intro screen
+│   ├── home.tscn              # Main menu screen
+│   ├── level1.tscn            # Level 1 
+│   ├── level2.tscn            # Level 2
+│   ├── level3.tscn            # Level 3
+│   ├── level4.tscn            # Level 4
+│   ├── level5.tscn            # Level 5
+│   ├── player.tscn            # Player character
+│   ├── enemy.tscn             # Enemy entities
+│   ├── collectible.tscn       # Crystal items
+│   ├── death_zone.tscn        # Hazard zones
+│   ├── touch_controls.tscn    # Mobile touch UI
+│   └── ui.tscn                # UI elements
+├── scripts/                   # All GDScript files
+│   ├── main.gd                # Main scene manager
+│   ├── splash.gd              # Splash screen logic
+│   ├── home.gd                # Home menu logic
+│   ├── player.gd              # Player movement & combat
+│   ├── game_manager.gd        # Game state management
+│   ├── enemy.gd               # Enemy behavior
+│   ├── touch_controls.gd      # Touch input handling
+│   ├── level1_animator.gd     # Background animation
+│   ├── level2_animator.gd     # Background animation
 │   └── [other scripts]
 ├── assets/
-│   ├── images/
-│   │   ├── player/      # Player sprites
-│   │   └── tilemap/     # Tileset and environment sprites
-│   └── sfx/             # Audio files
-└── project.godot        # Godot project configuration
+│   ├── player/                # Player sprites
+│   ├── level1/ - level5/      # Level-specific assets
+│   ├── control/               # Touch control button images
+│   ├── music/                 # Background music (OGG format)
+│   │   └── sfx/               # Sound effects
+│   └── [other assets]
+├── export_presets.cfg         # Export configurations
+├── project.godot              # Godot project configuration
+├── LICENSE                    # MIT License
+└── README.md                  # This file
 ```
 
 ## Getting Started
 
 ### Prerequisites
-- Godot 4.0 or higher
-- Operating System: Windows, macOS, or Linux
+- Godot 4.5 or higher
+- Operating System: Windows, macOS, Linux, or Android
+- For Web: Modern browser with WebAssembly support
 
 ### Installation
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/dragon.git
-cd dragon
+git clone https://github.com/tohasyafingi/TheLastHatchling.git
+cd TheLastHatchling
 ```
 
-2. Open the project in Godot 4:
-   - Launch Godot 4
+2. Open the project in Godot 4.5:
+   - Launch Godot 4.5
    - Click "Open Project" and select the `project.godot` file
 
 3. Press F5 or click the Play button to run the game
+
+## Export Options
+
+The game supports export to multiple platforms:
+
+### Desktop (Windows, Linux, macOS)
+```bash
+# In Godot Editor: Project → Export → Windows Desktop/Linux/macOS
+```
+
+### Web
+```bash
+# In Godot Editor: Project → Export → Web
+# Requires modern browser with WebAssembly support
+```
+
+### Android
+```bash
+# In Godot Editor: Project → Export → Android
+# Requires Android SDK and development environment setup
+# APK will be generated in build/android/ folder
+```
 
 ## Controls
 
 | Key | Action |
 |-----|--------|
-| W / Up Arrow | Jump |
 | A / Left Arrow | Move Left |
 | D / Right Arrow | Move Right |
-| Space | Attack |
+| Space | Jump |
+| Enter | Attack |
 | ESC | Back/Menu |
+
+### Mobile Controls
+- **Left/Right Buttons**: Move left or right
+- **Jump Button** (Bottom-Right): Jump
+- **Attack Button** (Top-Right): Attack enemies
 
 ## Game Flow
 
@@ -150,21 +194,24 @@ Contributions are welcome! Please feel free to:
 
 ## Future Enhancements
 
-- [ ] More levels with varied themes
+- [x] Mobile touch controls support
+- [x] Multiple levels with varied themes
+- [x] Enemy AI and combat system
+- [x] Background animations
 - [ ] Boss battles
 - [ ] Power-up system
 - [ ] Leaderboard/scoring system
-- [ ] Mobile controls support
 - [ ] Accessibility features
+- [ ] Localization (multiple languages)
 
 ## Contact & Support
 
 For questions, bug reports, or suggestions:
-- Open an [Issue](https://github.com/yourusername/dragon/issues) on GitHub
-- Contact: your-email@example.com
+- Open an [Issue](https://github.com/tohasyafingi/TheLastHatchling/issues) on GitHub
+- Email: [Your email here]
 
 ---
 
 **Enjoy saving the last hatchling!** 🐉✨
 
-Made with ❤️ using Godot Engine
+Made with ❤️ using Godot 4.5 Engine
