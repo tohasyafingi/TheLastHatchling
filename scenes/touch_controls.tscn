@@ -11,13 +11,14 @@ layer = 10
 script = ExtResource("1_touch_controls")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = 20.0
-offset_right = -76.0
-offset_bottom = -34.0
+offset_left = 67.0
+offset_top = 10.0
+offset_right = -72.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -28,18 +29,20 @@ size_flags_vertical = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 40
+theme_override_constants/separation = 50
 alignment = 2
 
 [node name="LeftButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(150, 120)
+texture_filter = 1
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture_normal = ExtResource("2_left")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="RightButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(150, 120)
+texture_filter = 1
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture_normal = ExtResource("3_right")
 ignore_texture_size = true
@@ -52,18 +55,20 @@ size_flags_horizontal = 3
 [node name="RightControls" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 16
+theme_override_constants/separation = 20
 alignment = 2
 
 [node name="AttackButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/RightControls"]
-custom_minimum_size = Vector2(150, 110)
+texture_filter = 1
+custom_minimum_size = Vector2(150, 140)
 layout_mode = 2
 texture_normal = ExtResource("4_attack")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="JumpButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/RightControls"]
-custom_minimum_size = Vector2(110, 110)
+texture_filter = 1
+custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 texture_normal = ExtResource("5_jump")
 ignore_texture_size = true

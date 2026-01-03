@@ -251,18 +251,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fjrip"]
-radius = 70.0
-height = 193.33334
+radius = 80.00001
+height = 168.88889
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(0.09, 0.09)
 script = ExtResource("1_fjrip")
+metadata/_edit_horizontal_guides_ = [10.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -5.55555)
+scale = Vector2(1, 1.0144928)
 sprite_frames = SubResource("SpriteFrames_ieltc")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 speed_scale = 1.5
 

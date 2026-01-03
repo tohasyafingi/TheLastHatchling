@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://csccl1g4n30op"]
+[gd_scene load_steps=12 format=3 uid="uid://csccl1g4n30op"]
 
 [ext_resource type="Texture2D" uid="uid://c3algs2lvbjhj" path="res://assets/level2/star.png" id="1_od5km"]
 [ext_resource type="Script" path="res://scripts/check_point.gd" id="2_checkpoint"]
+[ext_resource type="AudioStream" path="res://assets/music/finish.mp3" id="3_finish_sound"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_od5km"]
 atlas = ExtResource("1_od5km")
@@ -69,3 +70,7 @@ playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nranm")
+
+[node name="FinishSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_finish_sound")
+volume_db = 0.0

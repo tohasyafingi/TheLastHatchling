@@ -1,10 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://c0ml025lhbdkp"]
+[gd_scene load_steps=31 format=4 uid="uid://c0ml025lhbdkp"]
 
 [ext_resource type="PackedScene" uid="uid://bw8xnj0yqw7vr" path="res://scenes/ui.tscn" id="1_g8vcy"]
 [ext_resource type="Texture2D" uid="uid://dy34wmsqw4s2h" path="res://assets/level2/background.png" id="1_if4l3"]
 [ext_resource type="AudioStream" uid="uid://x6nhfoxg38cn" path="res://assets/music/level3.ogg" id="1_music"]
 [ext_resource type="Texture2D" uid="uid://dbwbxoju4svy3" path="res://assets/level2/middleground.png" id="2_4038r"]
-[ext_resource type="Texture2D" uid="uid://daxfp7hoc8m7i" path="res://assets/level2/map-1.png" id="3_2k3dv"]
 [ext_resource type="Texture2D" uid="uid://d3yq47mox0p7e" path="res://assets/level2/tileset.png" id="4_alqfr"]
 [ext_resource type="Script" uid="uid://cj5mxxrq4tnfr" path="res://scripts/game_manager.gd" id="4_game_manager"]
 [ext_resource type="Texture2D" uid="uid://7yysgq0rvfus" path="res://assets/level2/house.png" id="5_8g4ke"]
@@ -496,12 +495,6 @@ position = Vector2(1298, 376)
 scale = Vector2(3.4333334, 3.4333334)
 texture = ExtResource("2_4038r")
 
-[node name="Map1" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(862, 358)
-scale = Vector2(1.4270834, 1.6138393)
-texture = ExtResource("3_2k3dv")
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6ep0u")
 format = 2
@@ -522,7 +515,7 @@ position = Vector2(258, 524)
 scale = Vector2(0.15, 0.15)
 
 [node name="Enemy" parent="." instance=ExtResource("13_wvb8j")]
-position = Vector2(873, 581)
+position = Vector2(873, 582)
 scale = Vector2(2, 2)
 
 [node name="Enemy2" parent="." instance=ExtResource("13_wvb8j")]
@@ -530,7 +523,7 @@ position = Vector2(1356, 542)
 scale = Vector2(2, 2)
 
 [node name="Enemy3" parent="." instance=ExtResource("13_wvb8j")]
-position = Vector2(685, 277)
+position = Vector2(685, 278)
 scale = Vector2(2, 2)
 
 [node name="Enemy4" parent="." instance=ExtResource("13_wvb8j")]
@@ -538,7 +531,7 @@ position = Vector2(576, 78)
 scale = Vector2(2, 2)
 
 [node name="Enemy5" parent="." instance=ExtResource("13_wvb8j")]
-position = Vector2(1530, 373)
+position = Vector2(1530, 374)
 scale = Vector2(2, 2)
 
 [node name="Enemy6" parent="." instance=ExtResource("13_wvb8j")]
@@ -551,7 +544,7 @@ position = Vector2(407, -10)
 [node name="check_point" parent="." instance=ExtResource("15_cqal4")]
 position = Vector2(1525, 525)
 scale = Vector2(1.5, 1.5)
-next_scene_path = ""
+next_scene_path = "res://scenes/level3.tscn"
 
 [node name="Collectible" parent="." instance=ExtResource("16_o3sye")]
 position = Vector2(284, 109)

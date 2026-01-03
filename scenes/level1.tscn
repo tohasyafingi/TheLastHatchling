@@ -535,3 +535,4 @@ scale = Vector2(0.8, 0.8)
 
 [node name="check_point" parent="." instance=ExtResource("11_u3awl")]
 position = Vector2(676.11115, 210.55557)
+next_scene_path = "res://scenes/level2.tscn"

@@ -63,6 +63,9 @@ Desktop.ini
 .env.local
 .env.*.local
 
+# Questionnaire (feedback forms)
+QUESTIONNAIRE.md
+
 # Godot user settings
 user_settings/
 

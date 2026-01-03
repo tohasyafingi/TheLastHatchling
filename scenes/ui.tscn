@@ -108,6 +108,8 @@ texture_filter = 1
 position = Vector2(62, 19)
 scale = Vector2(2.523077, 2.523077)
 sprite_frames = SubResource("SpriteFrames_collectible")
+autoplay = "default"
+frame_progress = 0.3064345
 
 [node name="CollectibleLabel" type="Label" parent="MarginContainer/VBoxContainer/CollectibleCounter"]
 layout_mode = 2
@@ -123,13 +125,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = -110.0
-offset_right = 190.0
-offset_bottom = 110.0
+offset_left = -250.0
+offset_top = -140.0
+offset_right = 250.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 theme_override_styles/panel = SubResource("SBPanelDanger")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel"]
@@ -146,15 +147,15 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.6)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 42
 text = "GAME OVER"
 horizontal_alignment = 1
 
 [node name="SubLabel" type="Label" parent="GameOverPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.85, 0.85, 1)
-theme_override_font_sizes/font_size = 18
-text = "Try again or return home"
+theme_override_font_sizes/font_size = 22
+text = "Keep trying, you got this!"
 horizontal_alignment = 1
 
 [node name="HBoxButtons" type="HBoxContainer" parent="GameOverPanel/VBoxContainer"]
@@ -163,15 +164,15 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="HomeButton" type="Button" parent="GameOverPanel/VBoxContainer/HBoxButtons"]
-custom_minimum_size = Vector2(110, 38)
+custom_minimum_size = Vector2(140, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "home"
 
 [node name="RestartButton" type="Button" parent="GameOverPanel/VBoxContainer/HBoxButtons"]
-custom_minimum_size = Vector2(110, 38)
+custom_minimum_size = Vector2(140, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "restart"
 
 [node name="VictoryPanel" type="Panel" parent="."]
@@ -180,13 +181,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -100.0
-offset_right = 170.0
-offset_bottom = 100.0
+offset_left = -240.0
+offset_top = -130.0
+offset_right = 240.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 theme_override_styles/panel = SubResource("SBPanelSuccess")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VictoryPanel"]
@@ -203,21 +203,21 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.6)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 42
 text = "FINISH!"
 horizontal_alignment = 1
 
 [node name="SubLabel" type="Label" parent="VictoryPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 1, 0.88, 1)
-theme_override_font_sizes/font_size = 18
-text = "Great job!"
+theme_override_font_sizes/font_size = 22
+text = "You are awesome! 🎉"
 horizontal_alignment = 1
 
 [node name="HomeButton" type="Button" parent="VictoryPanel/VBoxContainer"]
-custom_minimum_size = Vector2(120, 40)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "home"
 
 [node name="CheckpointPanel" type="Panel" parent="."]
@@ -226,13 +226,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = -110.0
-offset_right = 190.0
-offset_bottom = 110.0
+offset_left = -250.0
+offset_top = -140.0
+offset_right = 250.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 theme_override_styles/panel = SubResource("SBPanelSuccess")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CheckpointPanel"]
@@ -249,15 +248,15 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.6)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 text = "LEVEL CLEAR"
 horizontal_alignment = 1
 
 [node name="SubLabel" type="Label" parent="CheckpointPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 1, 0.88, 1)
-theme_override_font_sizes/font_size = 18
-text = "Continue or replay"
+theme_override_font_sizes/font_size = 22
+text = "One step closer!"
 horizontal_alignment = 1
 
 [node name="HBoxButtons" type="HBoxContainer" parent="CheckpointPanel/VBoxContainer"]
@@ -266,19 +265,19 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="HomeButton" type="Button" parent="CheckpointPanel/VBoxContainer/HBoxButtons"]
-custom_minimum_size = Vector2(110, 38)
+custom_minimum_size = Vector2(140, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "home"
 
 [node name="RestartButton" type="Button" parent="CheckpointPanel/VBoxContainer/HBoxButtons"]
-custom_minimum_size = Vector2(110, 38)
+custom_minimum_size = Vector2(140, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "restart"
 
 [node name="NextButton" type="Button" parent="CheckpointPanel/VBoxContainer/HBoxButtons"]
-custom_minimum_size = Vector2(110, 38)
+custom_minimum_size = Vector2(140, 48)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "next"
